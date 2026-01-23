@@ -1,97 +1,87 @@
-Enron Spam Classifier
+# Enron Spam Classifier
 
+## Overview
+This project implements an **Email Spam Classifier** using **Logistic Regression** and **TF‑IDF** text features.  
+The goal is to classify emails as **Spam** or **Ham (Not Spam)** using real-world email data.
 
-A machine learning project to classify emails as spam or not spam (ham) using the Enron Spam dataset from Hugging Face. The model uses TF-IDF vectorization and Logistic Regression for prediction.
+---
 
-Dataset
+## Why Enron Dataset?
+- Contains **real corporate emails**
+- Clearly labeled as **spam** or **ham**
+- Widely used as a **benchmark dataset** for spam detection
+- Publicly available and suitable for academic and learning purposes
 
-Source: Hugging Face - SetFit/enron_spam
+Dataset used: **SetFit/enron_spam (Hugging Face)**
 
-Contains email text labeled as spam (1) or ham (0).
+---
 
-Dataset loaded directly using the datasets library.
+## Tools & Technologies Used
+- Python
+- Pandas
+- Scikit-learn
+- Hugging Face `datasets`
+- TF-IDF Vectorizer
+- Logistic Regression
+- Joblib (model persistence)
 
-Requirements
+---
 
-Python 3.x
+## Installation
 
-Libraries:
-
-datasets
-
-pandas
-
-scikit-learn
-
-joblib
-
-Install dependencies:
-
+```bash
 pip install datasets pandas scikit-learn joblib
+```
+## Steps
 
-Project Structure
-.
-├── spam_model.pkl            # Trained Logistic Regression model
-├── tfidf_vectorizer.pkl      # Saved TF-IDF vectorizer
-├── spam_classifier.py        # Python script with training & prediction
+### 1. Load Dataset
+- Load the Enron spam dataset from Hugging Face  
+- Convert it into a Pandas DataFrame  
 
+### 2. Data Preparation
+- Use the `text` column as input features  
+- Use the `label` column as target  
+  - `0` → Ham  
+  - `1` → Spam  
 
-Steps
+### 3. Train-Test Split
+- Split the dataset into:
+  - 80% Training data  
+  - 20% Testing data  
 
-Load Dataset
+### 4. Text Vectorization
+- Convert email text into numerical form using **TF-IDF**  
+- Limit vocabulary size to 5000 words  
+- Remove English stop words  
 
-Load SetFit/enron_spam using the datasets library.
+### 5. Model Training
+- Train a **Logistic Regression** classifier  
+- Optimize using **Log Loss**  
+- Learn word importance weights for spam detection  
 
-Convert to Pandas DataFrame.
+### 6. Evaluation
+- Evaluate model performance using:
+  - Accuracy  
+  - Confusion Matrix  
+  - Precision, Recall, F1-score  
 
-Preprocess Data
+### 7. Model Saving
+- Save trained Logistic Regression model  
+- Save TF-IDF vectorizer using **Joblib**  
 
-Combine Subject and Message (if needed).
+### 8. Prediction
+- Load saved model and vectorizer  
+- Predict whether a new email is spam or not  
+- Output both label and spam probability  
 
-Use text column as input and label column as target.
+---
 
-Train/Test Split
+## Example Predictions
+- **"Congratulations! You won a free prize!"** → Spam  
+- **"Meeting scheduled for tomorrow at 10 AM"** → Not Spam  
 
-Split data into 80% training and 20% testing using train_test_split.
+---
 
-Vectorize Text
-
-Use TfidfVectorizer with stop_words='english' and max_features=5000.
-
-Fit on training data, transform both train and test data.
-
-Train Model
-
-Logistic Regression (max_iter=1000) is used.
-
-Fit model on TF-IDF-transformed training data.
-
-Evaluate Model
-
-Metrics used: accuracy, confusion matrix, classification report.
-
-Save Model & Vectorizer
-
-joblib.dump() to save spam_model.pkl and tfidf_vectorizer.pkl.
-
-Predict Function
-
-Function predict_spam(message):
-
-Input: raw email text
-
-Output: "SPAM" or "NOT SPAM" and probability score
-
-Usage
-from spam_classifier import predict_spam
-
-result = predict_spam("Congratulations! You've won a free iPhone!")
-print(result)
-
-Notes
-
-The model is trained on the Enron dataset; performance depends on email content.
-
-Preprocessing like lowercasing and removing punctuation may improve prediction accuracy.
-
-Threshold for spam classification is 0.5 (can be adjusted).
+## Conclusion
+This project demonstrates how **Logistic Regression** combined with **TF‑IDF** can effectively classify emails.  
+Despite its simplicity, the model performs well on real-world data and serves as a strong baseline for text classification tasks.
