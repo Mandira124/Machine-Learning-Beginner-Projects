@@ -1,5 +1,5 @@
 This README explains each and every project included in this repository.
-# Enron Spam Classifier
+# Project 1: Enron Spam Classifier
 
 ## Overview
 This project implements an **Email Spam Classifier** using **Logistic Regression** and **TF‑IDF** text features.  
@@ -87,7 +87,9 @@ pip install datasets pandas scikit-learn joblib
 This project demonstrates how **Logistic Regression** combined with **TF‑IDF** can effectively classify emails.  
 Despite its simplicity, the model performs well on real-world data and serves as a strong baseline for text classification tasks.
 
-# Multi-class Sentiment Analysis on IMDb Dataset
+---------------------------------------------------------------------------------------------------------------------------------
+
+# Project 2: Multi-class Sentiment Analysis on IMDb Dataset
 
 ## Overview
 This project extends basic binary text classification (like spam detection) to **multi-class sentiment analysis**.  
