@@ -1,3 +1,4 @@
+This README explains each and every project included in this repository.
 # Enron Spam Classifier
 
 ## Overview
@@ -85,3 +86,52 @@ pip install datasets pandas scikit-learn joblib
 ## Conclusion
 This project demonstrates how **Logistic Regression** combined with **TF‑IDF** can effectively classify emails.  
 Despite its simplicity, the model performs well on real-world data and serves as a strong baseline for text classification tasks.
+
+# Multi-class Sentiment Analysis on IMDb Dataset
+
+## Overview
+This project extends basic binary text classification (like spam detection) to **multi-class sentiment analysis**.  
+Given a movie review, the model predicts if it is:
+- Positive
+- Neutral
+- Negative
+
+We use **TF-IDF vectorization** and **Logistic Regression** to build the model.
+
+---
+
+## Steps
+
+### 1. Load Dataset
+- Load multiclass-sentiment-analysis-dataset from Huggingface
+- Convert to pandas DataFrame
+
+### 2. Data Preparation
+- Use the review text as input
+- Map sentiment labels to numbers
+  - negative → 0
+  - neutral → 1
+  - positive → 2
+
+### 3. Train-Test Split
+- 80% training data
+- 20% testing data
+
+### 4. Text Vectorization
+- TF-IDF converts text into numerical features
+- Remove stopwords
+- Limit vocabulary to 20000 words
+
+### 5. Model Training
+- Train multi-class Logistic Regression
+- Use one-vs-rest approach
+- Learn word importance for sentiment
+
+### 6. Evaluation
+- Accuracy, confusion matrix
+- Precision, Recall, F1-score per class
+
+### 7. Prediction
+- Load model & vectorizer
+- Input new review → predict sentiment and probability
+
