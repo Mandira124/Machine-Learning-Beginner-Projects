@@ -87,7 +87,7 @@ pip install datasets pandas scikit-learn joblib
 This project demonstrates how **Logistic Regression** combined with **TF‑IDF** can effectively classify emails.  
 Despite its simplicity, the model performs well on real-world data and serves as a strong baseline for text classification tasks.
 
----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
 
 # Project 2: Multi-class Sentiment Analysis on IMDb Dataset
 
