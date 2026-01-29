@@ -1,4 +1,31 @@
 This README explains each and every project included in this repository.
+# Project 0: Regression Models Comparison
+
+## Overview: This project was created to understand how different regression models behave on the same problem.
+
+The aim of this project is learning and concept clarity rather than achieving high accuracy. All regression models are trained using the same dataset so that their differences can be clearly observed.
+
+The dataset represents a simple real life scenario where a student’s exam score depends on the number of hours they study. The relationship is intentionally kept slightly non linear to show why different regression techniques exist.
+
+###Linear regression is used first to demonstrate how a straight line fits the data and assumes a constant relationship between input and output. This helps build a basic understanding of regression.
+
+###Polynomial regression is then applied to show how allowing the model to curve helps capture changing trends in the data. This explains why linear regression is sometimes not sufficient.
+
+###Ridge regression is included to show how regularization controls model complexity. It keeps all input features but reduces extreme weight values, making the model more stable when data contains noise.
+
+###Lasso regression is used to demonstrate feature selection. It penalizes unnecessary influence and can completely remove features by reducing their coefficients to zero. This results in a simpler and more interpretable model.
+
+By plotting all regression models on the same graph, the difference in their behavior becomes visually clear. This project helped me understand when and why different regression techniques should be used instead of relying only on theory.
+
+# Implemented Using
+
+Python
+
+Numpy
+
+Scikit learn
+
+Matplotlib
 # Project 1: Enron Spam Classifier
 
 ## Overview
